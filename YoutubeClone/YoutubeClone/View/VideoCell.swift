@@ -1,42 +1,5 @@
+
 import UIKit
-
-let reuseIdentifier = "CellId"
-
-class HomeCollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "Home"
-        self.collectionView.backgroundColor = UIColor.white
-        self.collectionView.register(VideoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-    }
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
-    }
-}
-
 
 class VideoCell: UICollectionViewCell {
     override init(frame: CGRect) {
@@ -46,32 +9,38 @@ class VideoCell: UICollectionViewCell {
     
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .blue
+        imageView.image = UIImage(named: "Virat")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     let userProfileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .green
+        imageView.image = UIImage(named: "virat_profile")
+        imageView.layer.cornerRadius = 22
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     let separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         return view
     }()
     
     let titlelabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .purple
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Virat Kohli - Smashes 25th 100 in ODI"
         return label
     }()
     
     let subtitleTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .red
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.text = "Star Sports • 1,604,684,607 views • 2 years ago"
+        textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
+        textView.textColor = .lightGray
         return textView
     }()
     
@@ -102,7 +71,7 @@ class VideoCell: UICollectionViewCell {
         //height constraints
         addConstraint(NSLayoutConstraint(item: titlelabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
         
-        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .top, relatedBy: .equal, toItem: titlelabel, attribute: .bottom, multiplier:1, constant: 8))
+        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .top, relatedBy: .equal, toItem: titlelabel, attribute: .bottom, multiplier:1, constant: 4))
         
         //left constraints
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
@@ -111,24 +80,9 @@ class VideoCell: UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
         
         //height constraints
-        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        addConstraint(NSLayoutConstraint(item: subtitleTextView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 30))
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
-extension UIView {
-    func addConstraintsWithFormat(format:String,views:UIView...){
-
-        var viewsDictionary = [String:UIView]()
-        for(index,view) in views.enumerated() {
-            let key = "v\(index)"
-            view.translatesAutoresizingMaskIntoConstraints = false
-            viewsDictionary[key] = view
-            
-        }
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics:nil, views: viewsDictionary))
     }
 }
