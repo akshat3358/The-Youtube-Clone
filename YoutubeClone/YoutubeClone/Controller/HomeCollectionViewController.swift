@@ -15,8 +15,24 @@ class HomeCollectionViewController: UICollectionViewController ,UICollectionView
         titleLabel.font = UIFont.systemFont(ofSize: 20)
         self.collectionView.register(VideoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
+        
+        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        
+        setupMenuBar()
+        
     }
-
+    
+    let menuBar : MenuBar = {
+        let mb = MenuBar()
+        return mb
+    }()
+    
+    private func setupMenuBar() {
+        view.addSubview(menuBar)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
+    }
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

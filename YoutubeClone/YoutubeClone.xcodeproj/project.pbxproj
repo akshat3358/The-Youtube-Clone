@@ -12,6 +12,7 @@
 		7719DA542886A04700ABECB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7719DA532886A04700ABECB3 /* SceneDelegate.swift */; };
 		7719DA5B2886A04C00ABECB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7719DA5A2886A04C00ABECB3 /* Assets.xcassets */; };
 		7719DA5E2886A04C00ABECB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7719DA5C2886A04C00ABECB3 /* LaunchScreen.storyboard */; };
+		772A8106289A41980034A565 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A8105289A41980034A565 /* MenuBar.swift */; };
 		778029A828905C9600DE7410 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778029A728905C9600DE7410 /* Extensions.swift */; };
 		778029AB28905DE500DE7410 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778029AA28905DE500DE7410 /* VideoCell.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		7719DA5A2886A04C00ABECB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7719DA5D2886A04C00ABECB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7719DA5F2886A04C00ABECB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		772A8105289A41980034A565 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		778029A728905C9600DE7410 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		778029AA28905DE500DE7410 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				778029AA28905DE500DE7410 /* VideoCell.swift */,
+				772A8105289A41980034A565 /* MenuBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				778029AB28905DE500DE7410 /* VideoCell.swift in Sources */,
 				771533312887ECF300D4F090 /* HomeCollectionViewController.swift in Sources */,
+				772A8106289A41980034A565 /* MenuBar.swift in Sources */,
 				7719DA522886A04700ABECB3 /* AppDelegate.swift in Sources */,
 				7719DA542886A04700ABECB3 /* SceneDelegate.swift in Sources */,
 				778029A828905C9600DE7410 /* Extensions.swift in Sources */,
